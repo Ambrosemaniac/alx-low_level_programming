@@ -7,25 +7,21 @@
   */
 int main(void)
 {
-	int i = 0;
-	long j = 1, k = 2;
+	int i;
+    unsigned long int a = 1, b = 2, c;
 
-	while (i < 100)
-	{
-		if (i == 0)
-			printf("%ld", j);
-		else if (i == 1)
-			printf(", %ld", k);
-		else
-		{
-			k += j;
-			j = k - j;
-			printf(", %ld", k);
-		}
+    printf("%lu, %lu", a, b);
 
-		++i;
-	}
+    for (i = 0; i < 96; i++)
+    {
+        c = a + b;
+        printf(", %lu", c);
+        a = b;
+        b = c;
+    }
 
-	printf("\n");
-	return (0);
+    printf("\n");
+
+    return (0);
 }
+
